@@ -4,6 +4,7 @@ import Photo from './Photo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Ingredient from './Ingredient';
+import Procedure from './Procedure';
 
 export default function Main() {
   return (
@@ -13,9 +14,10 @@ export default function Main() {
       <Row>
           <Col>
             <Photo />
+            <Ingredient />
           </Col>
           <Col>
-            <Ingredient />
+            <Procedure />
           </Col>
       </Row>
     </div>
