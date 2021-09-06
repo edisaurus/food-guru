@@ -1,40 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import Toast from 'react-bootstrap/Toast';
+// Bootstrap Components
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
 
-import Landing from './component/LandingPage';
+// Components
+import Header from './component/Header';
+import Main from './component/Main';
+import Footer from './component/Footer';
 
 import './App.css';
 
-const ExampleToast = ({ children }) => {
-  const [show, toggleShow] = useState(true);
-
-  return (
-    <>
-      {!show && <Button onClick={() => toggleShow(true)}>Show Toast</Button>}
-      <Toast show={show} onClose={() => toggleShow(false)}>
-        <Toast.Header>
-          <strong className="mr-auto">React-Bootstrap</strong>
-        </Toast.Header>
-        <Toast.Body>{ children }</Toast.Body>
-      </Toast>
-    </>
-  );
-};
+// Container
 
 export default function App() {
   return (
-    <Container className="p-3">
-      <h1 className="center">Welcome To Food-Guru</h1>
-      <ExampleToast>
-        We now have Toasty
-        <span role="img" aria-label="tada">
-          🎉
-        </span>
-      </ExampleToast>
-      <Landing />
+    <Container id="container" className="p-3">
+      <Header />
+      <Main />
+      <Footer />
     </Container>
   );
 };
