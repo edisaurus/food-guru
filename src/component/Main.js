@@ -9,7 +9,7 @@ import Procedure from './Procedure';
 export default function Main() {
   return (
     <div id="main-container" className="center">
-      <p>Main Container</p>
+      <p>Main</p>
       <SearchBar />
       <Row>
           <Col>
