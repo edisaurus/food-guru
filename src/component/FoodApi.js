@@ -1,23 +1,20 @@
 import React from 'react';
 
-// export default function Api() {
-//   return (
-//     <div id="api-call" className="center">
-//       <p>API call</p>
-//     </div>
-//   );
-// }
-class Api extends React.Component {
+class FoodApi extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { recipes: [] }
+  }
 
   fetchFoods = () => {
-    fetch('https://api.spoonacular.com/recipes/complexSearch')
+    fetch('https://api.spoonacular.com/food/products/search?query=pasta&apiKey=5af2e57bd3324d5f8d0b90933d4b9b04')
       .then(response => response.json())
       .then(response => this.handleSuccessResponse(response))
       .catch(error => this.handleErrorResponse(error));
   };
 
   handleSuccessResponse = response => {
-    this.setState({ recipes: [...response.content] });
+    this.setState({ recipes: [...JSON.stringify(response)] });
   };
 
   handleErrorResponse = error => {
@@ -32,9 +29,10 @@ class Api extends React.Component {
     return (
       <div id="api-call" className="center">
         <p>API call test output</p>
+        <p>{this.state.recipes}</p>
       </div>
     );
   }
 }
 
-export default Api;
+export default FoodApi;

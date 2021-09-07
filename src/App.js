@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Header from './component/Header';
 import Main from './component/Main';
 import Footer from './component/Footer';
-import Api from './component/Api';
+import FoodApi from './component/FoodApi';
 
 // Styles
 import './App.css';
@@ -19,7 +19,7 @@ export default function App() {
       <p>Container</p>
       <Header />
       <Main />
-      <Api />
+      <FoodApi />
       <Footer />
     </Container>
   );

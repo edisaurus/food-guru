@@ -16,7 +16,7 @@ export default function SearchBar() {
           aria-describedby="basic-addon2"
         />
         <Button variant="outline-primary" id="button-addon2">
-          <i class="fa fa-search"></i>
+          <i className="fa fa-search"></i>
         </Button>
       </InputGroup>
       </Form>
