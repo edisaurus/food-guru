@@ -8,10 +8,6 @@ export default function Ingredient() {
         <li>sample</li>
         <li>sample</li>
         <li>sample</li>
-        <li>sample</li>
-        <li>sample</li>
-        <li>sample</li>
-        <li>sample</li>
       </ul>
     </div>
   );

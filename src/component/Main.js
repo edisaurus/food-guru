@@ -1,16 +1,14 @@
 import React from 'react';
-import SearchBar from './SearchBar';
 import Photo from './Photo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Ingredient from './Ingredient';
 import Procedure from './Procedure';
 
-export default function Main() {
+export default function Main(props) {
   return (
     <div id="main-container" className="center">
       <p>Main</p>
-      <SearchBar />
       <Row>
           <Col>
             <Photo />
@@ -20,6 +18,7 @@ export default function Main() {
             <Procedure />
           </Col>
       </Row>
+      <p>{props.items}</p>
     </div>
   );
 }

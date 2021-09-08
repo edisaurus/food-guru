@@ -5,7 +5,6 @@ import Container from 'react-bootstrap/Container';
 
 // Components
 import Header from './component/Header';
-import Main from './component/Main';
 import Footer from './component/Footer';
 import FoodApi from './component/FoodApi';
 
@@ -18,7 +17,6 @@ export default function App() {
     <Container id="container" className="p-3 center">
       <p>Container</p>
       <Header />
-      <Main />
       <FoodApi />
       <Footer />
     </Container>
