@@ -13,7 +13,8 @@ export default class FoodApi extends React.Component {
     this.state = { 
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      baseUri: ''
     };
   }
   
@@ -27,7 +28,8 @@ export default class FoodApi extends React.Component {
   handleSuccessResponse = response => {
     this.setState({
       isLoaded: true,
-      items: response.results
+      items: response.results,
+      baseUri: response.baseUri
     });
     console.log(response)
   };
@@ -45,7 +47,7 @@ export default class FoodApi extends React.Component {
   };
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, items, baseUri } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
@@ -67,7 +69,7 @@ export default class FoodApi extends React.Component {
           </InputGroup>
         </Form>
         <p>API call test output</p>
-        <Main items={items} />
+        <Main items={items} url={baseUri}/>
         </section>
       );
     }

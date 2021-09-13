@@ -1,30 +1,20 @@
 import React from 'react';
-import Photo from './Photo';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Ingredient from './Ingredient';
-import Procedure from './Procedure';
+import Suggestion from './Suggestion';
 
 export default function Main(props) {
-  const convert = props.items;
+  const list = props.items;
+  const uri = props.url;
 
   return (
     <div id="main-container" className="center">
       <p>Main</p>
       <Row>
-          <Col>
-            <Photo />
-            <Ingredient />
-          </Col>
-          <Col>
-            <Procedure />
-          </Col>
+        <Col>
+          <Suggestion recipes={list} base={uri} />
+        </Col>
       </Row>
-      <ul>{convert.map(item => (
-        <li key={item.id}>
-          {item.title}
-        </li>
-      ))}</ul>
     </div>
   );
 }
