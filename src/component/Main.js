@@ -6,6 +6,8 @@ import Ingredient from './Ingredient';
 import Procedure from './Procedure';
 
 export default function Main(props) {
+  const convert = props.items;
+
   return (
     <div id="main-container" className="center">
       <p>Main</p>
@@ -18,7 +20,11 @@ export default function Main(props) {
             <Procedure />
           </Col>
       </Row>
-      <p>{props.items}</p>
+      <ul>{convert.map(item => (
+        <li key={item.id}>
+          {item.title}
+        </li>
+      ))}</ul>
     </div>
   );
 }

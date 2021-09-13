@@ -56,13 +56,13 @@
 }
 
 #footer {
-  border: 1px solid black;
   bottom: 0;
   left: 0;
   position: fixed;
   width: 100%;
   background-color: grey;
   color: white;
+  font-size: large;
 }
 
 #api-call {
