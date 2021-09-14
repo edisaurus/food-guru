@@ -14,8 +14,7 @@ import './App.css';
 // Container
 export default function App() {
   return (
-    <Container id="container" className="p-3 center">
-      <p>Container</p>
+    <Container id="container" className="p-3">
       <Header />
       <FoodApi />
       <Footer />

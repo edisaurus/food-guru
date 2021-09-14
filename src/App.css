@@ -3,7 +3,6 @@
 }
 
 .item {
-  border: 1px solid black;
   width: 90%;
   height: 100%;
   padding: 10px;
@@ -15,7 +14,6 @@
 }
 
 .image {
-  border: 1px soild black;
   padding: 5px;
 }
 
@@ -33,7 +31,6 @@ ul {
 }
 
 #main-container {
-  border: 1px solid black;
   margin-top: 20px;
 }
 
@@ -51,24 +48,7 @@ ul {
   margin-right: auto;
 }
 
-#ingredient {
-  border: 1px solid black;
-  margin-top: 20px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-}
-
 #food-image {
-  border: 1px solid black;
-  margin-top: 20px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#procedure {
   border: 1px solid black;
   margin-top: 20px;
   width: 90%;
@@ -92,9 +72,9 @@ ul {
   background-color: grey;
   color: white;
   font-size: large;
+  padding: 1px;
 }
 
 #api-call {
-  border: 1px solid black;
   margin-top: 10px;
 }

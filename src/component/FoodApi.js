@@ -14,12 +14,13 @@ export default class FoodApi extends React.Component {
       error: null,
       isLoaded: false,
       items: [],
-      baseUri: ''
+      baseUri: '',
+      endpoint: 'https://api.spoonacular.com/recipes/search?query=bread&apiKey=5af2e57bd3324d5f8d0b90933d4b9b04'
     };
   }
   
   fetchFoods = () => {
-    fetch('https://api.spoonacular.com/recipes/search?query=pasta&apiKey=5af2e57bd3324d5f8d0b90933d4b9b04')
+    fetch(this.state.endpoint)
       .then(response => response.json())
       .then(response => this.handleSuccessResponse(response))
       .catch(error => this.handleErrorResponse(error));
@@ -48,29 +49,29 @@ export default class FoodApi extends React.Component {
 
   render() {
     const { error, isLoaded, items, baseUri } = this.state;
+
     if (error) {
       return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
       return <div>Loading...</div>
     } else {
       return (
-        <section id="api-call" className="center">
-         <p>Search</p>
+        <div id="api-call" className="center">
+         <h3>Search for a meal</h3>
          <Form id="input-form">
-         <InputGroup className="mb-3">
-          <FormControl
-            placeholder="Search for a meal..."
-            aria-label="Search for a meal..."
+          <InputGroup className="mb-3">
+            <FormControl
+            placeholder="Enter a keyword..."
+            aria-label="Enter a keyword..."
             aria-describedby="basic-addon2"
-          />
-          <Button variant="outline-primary" id="button-addon2">
-            <i className="fa fa-search"></i>
-          </Button>
+            />
+            <Button variant="outline-primary" id="button-addon2">
+              <i className="fa fa-search"></i>
+            </Button>
           </InputGroup>
         </Form>
-        <p>API call test output</p>
         <Main items={items} url={baseUri}/>
-        </section>
+        </div>
       );
     }
   }

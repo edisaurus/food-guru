@@ -9,7 +9,6 @@ export default function Main(props) {
 
   return (
     <div id="main-container" className="center">
-      <p>Main</p>
       <Row>
         <Col>
           <Suggestion recipes={list} base={uri} />
