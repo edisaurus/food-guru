@@ -15,12 +15,13 @@ export default class FoodApi extends React.Component {
       isLoaded: false,
       items: [],
       baseUri: '',
-      endpoint: 'https://api.spoonacular.com/recipes/search?query=bread&apiKey=5af2e57bd3324d5f8d0b90933d4b9b04'
+      value: ''
     };
+    this.submitQuery = this.submitQuery.bind(this);
   }
   
   fetchFoods = () => {
-    fetch(this.state.endpoint)
+    fetch('https://api.spoonacular.com/recipes/search?query=' + this.state.value + '&apiKey=5af2e57bd3324d5f8d0b90933d4b9b04')
       .then(response => response.json())
       .then(response => this.handleSuccessResponse(response))
       .catch(error => this.handleErrorResponse(error));
@@ -47,6 +48,14 @@ export default class FoodApi extends React.Component {
     this.fetchFoods();
   };
 
+  submitQuery() {
+    console.log('submitted query: ', this.state.value)
+    this.setState({
+      value: document.getElementById("query").value
+    })
+    this.fetchFoods();
+  }
+
   render() {
     const { error, isLoaded, items, baseUri } = this.state;
 
@@ -64,9 +73,12 @@ export default class FoodApi extends React.Component {
             placeholder="Enter a keyword..."
             aria-label="Enter a keyword..."
             aria-describedby="basic-addon2"
+            id="query"
             />
-            <Button variant="outline-primary" id="button-addon2">
-              <i className="fa fa-search"></i>
+            <Button variant="outline-primary" 
+            id="button-addon2" 
+            onClick={this.submitQuery}>
+            <i className="fa fa-search"></i>
             </Button>
           </InputGroup>
         </Form>
